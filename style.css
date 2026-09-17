@@ -1,0 +1,179 @@
+/* Import modern, clean typography */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+
+:root {
+  /* Color Palette */
+  --bg-gradient: radial-gradient(circle at 50% 0%, #1e1b4b 0%, #0f172a 100%);
+  --surface-glass: rgba(255, 255, 255, 0.05);
+  --surface-border: rgba(255, 255, 255, 0.12);
+  --surface-border-focus: rgba(99, 102, 241, 0.5);
+  
+  --primary: #6366f1;
+  --primary-hover: #4f46e5;
+  --primary-glow: rgba(99, 102, 241, 0.35);
+
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+
+  --card-radius: 20px;
+  --element-radius: 12px;
+  --transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  color: #f8fafc;
+  background-color: #090d16;
+  background-image: 
+    radial-gradient(at 15% 15%, rgba(99, 102, 241, 0.28) 0px, transparent 55%),
+    radial-gradient(at 85% 20%, rgba(168, 85, 247, 0.22) 0px, transparent 50%),
+    radial-gradient(at 50% 90%, rgba(14, 165, 233, 0.2) 0px, transparent 60%);
+  background-attachment: fixed;
+}
+
+/* Glassmorphic Container */
+.container {
+  width: 500%;
+  max-width: 850px;
+  padding: 40px 48px;
+  background: var(--surface-glass);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--surface-border);
+  border-radius: var(--card-radius);
+  box-shadow: 
+    0 20px 40px -15px rgba(0, 0, 0, 0.5),
+    0 0 0 1px rgba(255, 255, 255, 0.05) inset;
+  text-align: center;
+}
+
+/* Form / Input Row */
+.input-group {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+input {
+  flex: 1;
+  padding: 13px 16px;
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid var(--surface-border);
+  border-radius: var(--element-radius);
+  color: var(--text-primary);
+  font-size: 0.95rem;
+  font-family: inherit;
+  outline: none;
+  transition: var(--transition);
+}
+
+input::placeholder {
+  color: var(--text-muted);
+}
+
+input:focus {
+  border-color: var(--primary);
+  background: rgba(15, 23, 42, 0.9);
+  box-shadow: 0 0 0 3px var(--primary-glow);
+}
+
+/* Sleek Animated Button */
+button {
+  padding: 13px 22px;
+  background: var(--primary);
+  color: #ffffff;
+  border: none;
+  border-radius: var(--element-radius);
+  font-size: 0.95rem;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: var(--transition);
+  box-shadow: 0 4px 14px var(--primary-glow);
+}
+
+button:hover {
+  background: var(--primary-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px var(--primary-glow);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+/* Result Box */
+#result {
+  margin-top: 24px;
+  padding: 18px 20px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px dashed var(--surface-border);
+  border-radius: var(--element-radius);
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  min-height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Modern History List */
+#history {
+  list-style: none;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-height: 200px;
+  overflow-y: auto;
+  padding-right: 4px;
+}
+
+#history li {
+  padding: 10px 14px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: var(--transition);
+}
+
+#history li:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.12);
+  color: var(--text-primary);
+}
+
+/* Custom Minimal Scrollbar */
+#history::-webkit-scrollbar {
+  width: 5px;
+}
+
+#history::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+#history::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 10px;
+}
